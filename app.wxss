@@ -1,0 +1,146 @@
+/**app.wxss**/
+page{
+  background:#a0daee;
+  height:100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  /* background:rgba(182,146,217,0.12); */
+} 
+/* flex布局公共样式*/
+.flex{
+  display:flex;
+}
+.flex-row{
+  flex-flow: row nowrap;
+}
+.flex-col{
+  flex-flow: column nowrap;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+.flex-start{
+  justify-content: flex-start;
+}
+.flex-end{
+  justify-content: flex-end;
+}
+.flex-between{
+  justify-content: space-between;
+}
+.flex-around{
+  justify-content: space-around;
+}
+/* 背景色 */
+.bg-white{
+  background:#fff;
+}
+/* 字号 */
+.ft15{
+  font-size:15rpx;
+}
+.ft18{
+  font-size:18rpx;
+}
+.ft20{
+  font-size:20rpx;
+}
+.ft22{
+  font-size:22rpx;
+}
+.ft24{
+  font-size:24rpx;
+}
+.ft26{
+  font-size:26rpx;
+}
+.ft28{
+  font-size:28rpx;
+}
+.ft30{
+  font-size:30rpx;
+}
+.ft32{
+  font-size:32rpx;
+}
+.ft36{
+  font-size:36rpx;
+}
+.ft38{
+  font-size:38rpx;
+}
+.ft40{
+  font-size:40rpx;
+}
+.ft48{
+  font-size:48rpx;
+}
+.ft56{
+  font-size:56rpx;
+}
+.ft60{
+  font-size:60rpx;
+}
+.ft72{
+  font-size:72rpx;
+}
+/* 字体颜色 */
+.textWhite{
+  color:#fff;
+}
+.textOrange{
+  color:#feb04c;
+}
+.textGray{
+  color:#919191;
+}
+.textLightBlack{
+  color:#484848;
+}
+.textBlack{
+  color:#303032;
+}
+.textPink{
+  color:#9f6ae9;
+}
+.textRed{
+  color:#ea6c53;
+}
+.textGreen{
+  color:#72c900;
+}
+.textCoffe{
+  color:#b05701;
+}
+.textLightYellow{
+  color:#faeeaf;
+}
+.textBlue{
+  color:#3963e0;
+}
+.textLightBlue{
+  color:#6d9df5;
+}
+/* 字体加粗 */
+.bold{
+  font-weight:bold;
+}
+/* 下边距 */
+.pdbot{
+  padding-bottom:95rpx;
+}
+.pd-all{
+  padding:35rpx;
+}
+.radius-box{
+  border-radius: 10rpx;
+}

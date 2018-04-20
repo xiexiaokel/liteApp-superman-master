@@ -1,0 +1,22 @@
+/* components/botNav/botNav.wxss */
+@import '../../app.wxss';
+.mainNav{
+  /* position:fixed;
+  left:0;
+  bottom:0; */
+  width:750rpx;
+  /* border-top:1px #e0d8e8 solid; */
+  align-items: center;
+  height:260rpx;
+  display: flex;
+}
+.tab-item{
+  flex:1;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+.tab-icon{
+  height:100rpx;
+  width:100rpx;
+}

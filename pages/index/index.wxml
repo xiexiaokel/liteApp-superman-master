@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<scroll-view class="container" scroll-y>
+  <view class="full-banner">
+    <view class="game-rule flex flex-end flex-row">
+      <text class="ft30 textWhite rule-btn" bindtap="showModal">规则</text>
+    </view>
+    <image src="{{imgTitle}}" class="img-title"></image>
+    <text class="fight-num ft36 textBlue">当前共有{{fight_num}}次挑战</text>
+    <view class="fight-btn textWhite ft60 bold" bindtap="fightStart">开始挑战</view>
+    <button class="invited" bindtap="invitedFriend">
+      <image src="{{imgInvited}}" class="img-invited"></image>
+      <text class="ft36 textWhite">邀请好友一起来答题</text>
+    </button>
+    <botNav page="home"></botNav>
+  </view>
+  <!-- 大弹窗 -->
+  <popModal showModal="{{showModal}}" height="580">
+    <!-- 写入弹窗内容 -->
+    <view class="modal-text">
+      <view class="text-item">
+        <text class="text-icon pink">1</text>
+        <text class="ft28 textBlack">每人每天获得一次免费挑战机会，分享到不
+同的群可以获得更多挑战机会。</text>
+      </view>
+      <view class="text-item">
+        <text class="text-icon blue">2</text>
+        <text class="ft28 textBlack">挑战一共有12道题，全部答对可获得奖品一
+份。</text>
+      </view>
+      <view class="text-item">
+        <text class="text-icon pink">3</text>
+        <text class="ft28 textBlack">奖品领取成功后将在15个工作日内发出。</text>
+      </view>
+      <text class="ft36 textRed">如需了解详情请联系客服</text>
+      <button class="red-btn" bindtap="relationClick">立即联系</button>
+    </view>
+  </popModal>
+  <!-- 开始挑战小弹窗 -->
+  <popModal showModal="{{showPop}}" height="300">
+    <!-- 弹窗内容 -->
+    <view class="fight-pop">
+      <image src="{{popHead}}" class="pop-head"></image>
+      <button class="invited-btn" bindtap="invitedFriend">
+        <text class="ft36">分享群挑战机会+1</text>
+        <text class="ft56">免费</text>
+      </button>
+    </view>
+  </popModal>
+  <!-- 底部导航 -->
+</scroll-view>

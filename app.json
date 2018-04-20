@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rank/rank",
+    "pages/mine/mine",
+    "pages/prize/prize",
+    "pages/fighting/fighting",
+    "pages/address/address",
+    "pages/complanit/complanit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#a0daee",
+    "navigationBarTitleText": "答题小超人",
+    "navigationBarTextStyle": "light"
+  }
+}

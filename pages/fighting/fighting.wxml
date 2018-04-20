@@ -1,0 +1,63 @@
+<!--pages/fighting/fighting.wxml-->
+<view class="container">
+  <view class="fight-head flex flex-center flex-col flex-start">
+    <text class="ft36 textLightYellow">从1按到25，顺序不能错哟~！</text>
+    <text class="ft28 textLightYellow">游戏过程中有可能随机调整数字排序  </text>
+    <image src="{{musicIcon}}" class="music-icon"></image>
+    <image src="{{clockIcon}}" class="clock-icon"></image>
+    <view class="times">
+      <text class="ft40 textLightYellow">1.1</text>
+      <text class="ft26 textLightYellow">S</text>
+    </view>
+  </view>
+  <view class="fight-body">
+    <block wx:for="{{numberList}}" wx:key="{{index}}">
+      <button class="click-item active" wx:if="{{item.checked}}" data-key="{{index}}" bindtap="itemChecked">{{item.num}}</button>
+      <button class="click-item" wx:else data-key="{{index}}" bindtap="itemChecked">{{item.num}}</button>
+    </block>
+  </view>
+  <view class="fight-foot">
+    <text class="ft36 textLightYellow">注：点击数字按钮变红</text>
+  </view>
+  <!-- 挑战结果 -->
+  <view class="result-modal" wx:if="{{showModal}}">
+    <view class="result-head">
+      <text class="ft36 textLightYellow">今日挑战：8秒</text>
+    </view>
+    <view class="result-body">
+      <image src="{{resultImg}}" class="result-status"></image>
+      <view class="fight-result">
+        <view class="score">
+          <image src="{{userPic}}" class="head-pic"></image>
+          <text class="ft48 textWhite">用时：{{fightTime}}</text>
+        </view>
+        <view class="record flex-col">
+          <view class="record-item flex flex-center flex-between">
+            <text class="ft30 textRed">我的最佳成绩</text>
+            <text class="ft30 textRed">00′23″0</text>
+          </view>
+          <view class="record-item flex flex-center flex-between">
+            <text class="ft30 textRed">目前排位</text>
+            <text class="ft36 textRed">第324486名</text>
+          </view>
+          <view class="record-item flex flex-center flex-between">
+            <text class="ft30 textRed">超过限定时间</text>
+            <text class="ft30 textRed">00′08″0</text>
+          </view>
+        </view>
+      </view>
+      <text class="ft30 textRed tips">每天练习一周后注意力有明显提升
+长期练习注意力优于常人50%~90%</text>
+      <view class="btn-group">
+        <block wx:if="{{!fightResult}}">
+          <button class="get-times">获得更多挑战机会</button>
+          <button class="once-more">再来一次</button>
+        </block>
+        <block wx:else>
+          <button class="get-prize" bindtap='getPrize'>领取奖品</button>
+        </block>
+      </view>
+    </view>
+  </view>
+  <botNav page="fighting"></botNav>
+</view>
