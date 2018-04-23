@@ -1,0 +1,10 @@
+/* components/circleCountdown/circleCountdown.wxss */
+.count-down{
+  /* width:140rpx;
+  height:140rpx;
+  overflow:hidden; */
+  padding:5rpx;
+  box-sizing: border-box;
+  background:#000;
+  border-radius: 70rpx;
+}

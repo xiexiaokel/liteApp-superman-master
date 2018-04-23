@@ -30,6 +30,7 @@ Component({
       this.setData({
         showAlert: false
       })
+      this.triggerEvent('closeAlert');
     }
   }
 })

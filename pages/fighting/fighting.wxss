@@ -1,188 +1,111 @@
 /* pages/fighting/fighting.wxss */
 
-page {
-  background: #1f1f1f;
+.game-process {
+  position: relative;
+  height: 40rpx;
+  z-index: 2;
+  width: 690rpx;
+  margin: 20rpx auto;
 }
 
-.fight-head {
-  position: fixed;
+.game-process:before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 6rpx;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 17rpx;
+  z-index: 3;
+}
+
+.process-content {
+  position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 240rpx;
-  background: #ea6c53;
-  border-bottom: 12rpx #bd4a38 solid;
-  padding-top: 30rpx;
-  overflow: hidden;
-}
-
-.music-icon {
-  width: 70rpx;
-  height: 70rpx;
-  position: absolute;
-  right: 35rpx;
-  top: 26%;
-  margin-top: -35rpx;
-}
-
-.clock-icon {
-  width: 56rpx;
-  height: 56rpx;
-  margin-top: 15rpx;
-  margin-bottom: 10rpx;
-}
-
-.fight-foot {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 160rpx;
-  background: #ea6c53;
-  border-top: 12rpx #bd4a38 solid;
+  right: 0;
+  z-index: 4;
+  height: 40rpx;
   display: flex;
-  align-items: center;
-  padding-left: 35rpx;
-}
-
-.fight-body {
-  flex: 1;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 310rpx 15rpx 200rpx 15rpx;
-  display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  padding: 0 10rpx;
 }
 
-.click-item {
-  width: 122rpx;
-  height: 128rpx;
-  line-height: 128rpx;
-  font-size: 40rpx;
-  background: #404040;
-  border-bottom: 6rpx #2f2f2f solid;
+.process-item {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 17rpx;
+  background: #fff;
   color: #fff;
-  margin: 0;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 26rpx;
 }
 
-.active {
-  background: #ea6c53;
-  border-bottom-color: #ad503d;
+.item-active {
+  background: #ffc508;
 }
 
-/* 挑战结果 */
+/* 游戏 */
 
-.result-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ea6c53;
-  padding: 35rpx;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: flex-start;
+.game-box {
+  width: 690rpx;
+  margin: 20rpx auto;
+  background: #fff;
+  border-radius: 15rpx;
+  position: relative;
 }
 
-.result-head {
-  height: 60rpx;
-  line-height: 60rpx;
-  border-radius: 30rpx;
-  background: #d44e47;
-  width: 100%;
+.countdown {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.game-content {
+  padding-top: 30rpx;
+  padding: 0 30rpx;
+}
+
+.item-title {
+  display: block;
+  margin: 80rpx auto;
   text-align: center;
 }
 
-.result-body {
-  background: #fdf5e1;
-  border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
+.game-item {
   width: 100%;
-  height:1000rpx;
-  margin-top: 30rpx;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.result-status {
-  width: 570rpx;
-  height: 81rpx;
-  margin: 35rpx 0;
-}
-
-.head-pic {
-  width: 150rpx;
-  height: 150rpx;
-  margin-bottom: 40rpx;
-  margin-right: 40rpx;
-}
-
-.fight-result {
-  width: 530rpx;
-  height: 325rpx;
-  border-radius: 15rpx;
-  border: 1px #ea6c53 solid;
-  background: #fff;
-  position: relative;
-  margin-top: 70rpx;
-}
-
-.score {
-  position: absolute;
-  left: 50%;
-  top: -80rpx;
-  width: 646rpx;
-  height: 226rpx;
-  margin-left: -323rpx;
-  background-image: url('https://duokeyun.oss-cn-qingdao.aliyuncs.com/wechat/wxapp/eyes_hands/images/time_bg.png');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  padding-left: 30rpx;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-
-.record {
-  padding: 160rpx 30rpx 30rpx 30rpx;
-  line-height: 50rpx;
-}
-
-.tips {
-  margin: 40rpx 0;
-}
-
-.btn-group {
-}
-
-.get-times, .get-prize {
-  width: 370rpx;
-  height: 90rpx;
-  background: #f16c60;
-  border-radius: 45rpx;
-  line-height: 90rpx;
-  color: #fff;
-  font-size: 32rpx;
-  margin-bottom: 25rpx;
-}
-
-.once-more {
-  width: 370rpx;
-  height: 90rpx;
+  height: 100rpx;
   box-sizing: border-box;
-  background: none;
-  border: 2rpx #f16c60 solid;
-  color: #f16c60;
-  font-size: 32rpx;
+  border-radius: 50rpx;
+  border: 5rpx #e5e5e5 solid;
+  background-color: #fff;
+  margin-bottom: 30rpx;
   line-height: 90rpx;
-  border-radius: 45rpx;
+  padding-left: 45rpx;
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+  background-position: 550rpx center;
 }
 
-button:after {
-  border: none;
+.correct {
+  background-color: #57c521;
+  color: #fff;
+  border-color: #57c521;
+  background-image: url('https://duokeyun.oss-cn-qingdao.aliyuncs.com/wechat/wxapp/superman/images/correct_icon.png');
+}
+
+.wrong {
+  background-color: #ff673e;
+  color: #fff;
+  border-color: #ff673e;
+  background-image: url('https://duokeyun.oss-cn-qingdao.aliyuncs.com/wechat/wxapp/superman/images/wrong_icon.png');
+}
+
+.item-index {
+  display: block;
+  text-align: center;
+  margin-bottom: 30rpx;
 }

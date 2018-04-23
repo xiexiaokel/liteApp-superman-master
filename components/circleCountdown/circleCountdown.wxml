@@ -1,0 +1,5 @@
+<!--components/circleCountdown/circleCountdown.wxml-->
+<view class="count-down">
+ 
+</view>
+ <canvas canvas-id='countDown'></canvas>
