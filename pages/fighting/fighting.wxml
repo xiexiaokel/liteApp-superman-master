@@ -10,7 +10,7 @@
   </view>
   <!-- 游戏开始 -->
   <view class="game-box">
-    <!-- <circleCountDown></circleCountDown> -->
+     <circleCountDown cvsWidth="150" cvsHeight='150'></circleCountDown> 
     <view class='game-content'>
       <text class="item-title ft36 textBlue">{{currGameData.title}}</text>
       <block wx:for="{{currGameData.answerList}}" wx:key="{{index}}">
@@ -56,5 +56,5 @@
       </view>
   </popModal>
   <!-- <游戏倒计时> -->
-  <!-- <countDown count="3" bgColor="#a0daee" bindgameStart="myCustomEvent"></countDown> -->
+   <!-- <countDown count="3" bgColor="#a0daee" bindgameStart="myCustomEvent"></countDown>  -->
 </view>

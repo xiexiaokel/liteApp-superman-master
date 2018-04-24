@@ -1,5 +1,5 @@
-<!--components/circleCountdown/circleCountdown.wxml-->
-<view class="count-down">
- 
+<!--components/circleCountDown/circleCountDown.wxml-->
+<view class="circle-coutn-down" style="width:{{cvsWidth}}px;height:{{cvsHeight}}px;">
+  <canvas canvas-id="myCanvas" style='width:{{cvsWidth}}px;height:{{cvsHeight}}px'/>
 </view>
- <canvas canvas-id='countDown'></canvas>
+

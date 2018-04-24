@@ -1,6 +1,6 @@
 {"usingComponents":{
   "botNav":"../../components/botNav/botNav",
-  "circleCountDown":"../../components/circleCountdown/circleCountdown",
+  "circleCountDown":"../../components/circleCountDown/circleCountDown",
   "popAlert":"../../components/popAlert/popAlert",
   "popModal":"../../components/popModal/popModal",
   "countDown":"../../components/countDown/countDown"
