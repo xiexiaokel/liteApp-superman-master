@@ -1,5 +1,7 @@
 {"usingComponents":{
   "botNav":"../../components/botNav/botNav",
   "circleCountDown":"../../components/circleCountdown/circleCountdown",
-  "popAlert":"../../components/popAlert/popAlert"
+  "popAlert":"../../components/popAlert/popAlert",
+  "popModal":"../../components/popModal/popModal",
+  "countDown":"../../components/countDown/countDown"
 }}

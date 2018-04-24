@@ -10,6 +10,9 @@ Component({
     height:{
       type:String,
     },
+    bgColor:{
+      type:String
+    }
   },
   /**
    * 组件的初始数据

@@ -58,12 +58,9 @@
   border-radius: 15rpx;
   position: relative;
 }
-
-.countdown {
-  width: 130rpx;
-  height: 130rpx;
+.game-rule{
+  padding-top:20rpx;
 }
-
 .game-content {
   padding-top: 30rpx;
   padding: 0 30rpx;
@@ -108,4 +105,57 @@
   display: block;
   text-align: center;
   margin-bottom: 30rpx;
+}
+
+/* 失败弹窗内容 */
+.alert-content{
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding:0 35rpx;
+}
+.alert-icon{
+  width:172rpx;
+  height:173rpx;
+  margin-right:10rpx;
+  margin-top:-30rpx;
+}
+.alert-invited-btn{
+  width:430rpx;
+  height:90rpx;
+  border-radius: 45rpx;
+  background:#ffc508;
+  color:#fff;
+  font-size:36rpx;
+  margin-top:25rpx;
+}
+.alert-invited-btn:after{
+  display: none;
+}
+.success-content{
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.success-img{
+  width:602rpx;
+  height:709rpx;
+}
+.success-btn{
+  width:412rpx;
+  height:109rpx;
+  margin-top:10rpx;
 }

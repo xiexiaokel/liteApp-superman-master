@@ -71,8 +71,12 @@ Page({
   },
   fightStart: function () {
     console.log('开始挑战');
-    this.setData({
-      showPop: true
+    //没有次数弹弹窗
+    // this.setData({
+    //   showPop: true
+    // })
+    wx.navigateTo({
+      url: '../fighting/fighting',
     })
   },
   invitedFriend: function () {

@@ -8,6 +8,10 @@ Page({
    */
   data: {
     showAlert:false,
+    showModal:false,
+    alertIcon:`${imgHost}/images/fail_icon.png`,
+    successImg: `${imgHost}/images/success_icon.png`,
+    successBtn: `${imgHost}/images/prize_btn.png`,
     processData: [{
       num: 1,
       checked: true
@@ -83,12 +87,6 @@ Page({
       }
     ],
     currGameData: {},//当前显示的题目数据
-
-    resultImg: `${imgHost}/images/success_icon.png`,
-    userPic: `${imgHost}/images/head_pic.png`,
-    showModal: false,//是否显示挑战结果弹窗
-    fightTime: '00′23″0',//挑战用时
-    fightResult: false,//挑战结果
   },
   // 点击事件
   checkItem: function (e) {
@@ -136,6 +134,9 @@ Page({
     }
     else{
       console.log('恭喜您，答题成功可以领奖');
+      this.setData({
+        showModal:true
+      })
     }
     
   },
@@ -149,6 +150,9 @@ Page({
     wx.navigateTo({
       url: '../prize/prize',
     })
+  },
+  myCustomEvent:function(){
+    console.log('游戏开始了开始了')
   },
   /**
    * 生命周期函数--监听页面加载
