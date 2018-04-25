@@ -54,6 +54,7 @@
 .game-box {
   width: 690rpx;
   margin: 20rpx auto;
+  margin-top:150rpx;
   background: #fff;
   border-radius: 15rpx;
   position: relative;
@@ -62,8 +63,8 @@
   padding-top:20rpx;
 }
 .game-content {
-  padding-top: 30rpx;
   padding: 0 30rpx;
+    padding-top:50rpx;
 }
 
 .item-title {
@@ -158,4 +159,21 @@
   width:412rpx;
   height:109rpx;
   margin-top:10rpx;
+}
+
+/* 倒计时 */
+.count-down{
+  position: absolute;
+  width:210rpx;
+  height:210rpx;
+  background:#fff;
+  left:50%;
+  top:0;
+  margin-top:-105rpx;
+  margin-left:-105rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 105rpx;
+  overflow:hidden;
 }

@@ -7,8 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showAlert:false,
-    showModal:false,
+    showAlert:false,//是否显示alert弹窗
+    showModal:false,//是否显示模态框弹窗
+    showCount:true,//是否显示倒计时
+    stopCount:false,//是否立即停止倒计时
     alertIcon:`${imgHost}/images/fail_icon.png`,
     successImg: `${imgHost}/images/success_icon.png`,
     successBtn: `${imgHost}/images/prize_btn.png`,
@@ -88,6 +90,12 @@ Page({
     ],
     currGameData: {},//当前显示的题目数据
   },
+  //监听倒计时结束触发事件
+  countDown:function(){
+   this.setData({
+     showAlert:true,
+   })
+  },
   // 点击事件
   checkItem: function (e) {
     const currKey = e.currentTarget.dataset.key; //当前选中的答案
@@ -97,6 +105,9 @@ Page({
         item.checked = true;
         if (item.correct) {
           console.log('回答正确');
+          this.setData({
+            stopCount:true
+          })
           setTimeout(() => {
             this.refreshGameData();
           }, 1000);
@@ -105,6 +116,7 @@ Page({
           console.log('回答错误答题结束');
           this.setData({
             showAlert:true,
+            stopCount:true
           })
         }
       }
@@ -114,7 +126,7 @@ Page({
     })
     this.setData({
       currGameData,
-      answerStep: answerStep + 1
+      answerStep: answerStep + 1,
     })
 
   },
@@ -123,13 +135,14 @@ Page({
     const { answerStep, gameData, processData } = this.data;
     if(answerStep<=3){
       this.setData({
-        currGameData: gameData[answerStep - 1]
+        currGameData: gameData[answerStep - 1],
+        stopCount:false,
       })
       processData.forEach(item => {
         item.num == answerStep ? item.checked = true : item.checked = false;
       })
       this.setData({
-        processData
+        processData,
       })
     }
     else{
