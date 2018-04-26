@@ -11,7 +11,7 @@
   <!-- 游戏开始 -->
   <view class="game-box">
     <view class="count-down">
-      <circleCountDown cvsWidth="75" cvsHeight='75' limitTime="5" currTime="5" stopCount="{{stopCount}}" showCount="{{showCount}}" bindtimeOver="countDown"></circleCountDown>
+      <circleCountDown cvsWidth="75" cvsHeight='75' limitTime="10" stopCount="{{stopCount}}" showCount="{{showCount}}" bindtimeOver="countDown"></circleCountDown>
     </view> 
     <view class='game-content'>
       <text class="item-title ft36 textBlue">{{currGameData.title}}</text>
