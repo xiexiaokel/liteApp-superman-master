@@ -1,13 +1,12 @@
 /* 组件说明 */
 /* cvsWidth,cvsHeight 分别为画布的宽度和高度，
-limitTime：为规定的游戏倒计时时间;
-
+limitTime：为规定的游戏倒计时共计时间;
+currTime:为倒计时开始的时候的秒数，表示从哪一秒开始倒计时，
 stopCount:是否立即停止倒计时
 
+limitTime和currTime必须为相同的时间数字，否则效果会有差异,
 timeOVer事件是暴露给外部判断倒计时是否结束的事件 */
 
-/*  调用实例 */
-/* <circleCountDown cvsWidth="200" cvsHeight= "200" limitTime= "10" bindtimeOver= "myEvent" > </circleCountDown> */
 
 
 
@@ -26,6 +25,12 @@ Component({
     limitTime: {
       type: String
     },
+    currTime: {
+      type: String
+    },
+    // showCount: {
+    //   type: Boolean
+    // },
     stopCount: {
       type: Boolean
     }
@@ -35,64 +40,40 @@ Component({
    * 组件的初始数据
    */
   data: {
+
     limitTime: 10,
+    count:1,
     showCount: true,
     stopCount: false,
-    animationData: {}
   },
   ready: function () {
     let { limitTime } = this.data;
     const pi = Math.PI;
     const max_angle = 1.5
-    const countTime = limitTime;
+    const countTime= limitTime;
     const average_angle = 2 / limitTime;
     this.drawRange(max_angle * pi, limitTime);
-    let animation = wx.createAnimation();
-    this.animation = animation;
     const countdown = setInterval(() => {
-      animation.scale(2, 2).opacity(0).step({
-        duration: 850,
-        timingFunction: 'ease',
-        transformOrigin: '50% 50%'
-      });
-      animation.scale(1, 1).opacity(1).step({
-        duration: 50,
-        timingFunction: 'step-start',
-        transformOrigin: '50% 50%'
-      });
       let { stopCount } = this.data;
-      let prevAngle = max_angle - (countTime - limitTime + 2) * average_angle;
-      let currAngle = max_angle - (countTime - limitTime + 1) * average_angle;
-      let ani_item = (prevAngle - currAngle) / 40;
-      let ani_count = 0;
-      let animationDraw = setInterval(() => {
-        this.drawRange((currAngle + ani_item * ani_count) * pi, limitTime);
-        ani_count = ani_count + 1;
-        // console.log(ani_count);
-        if (ani_count > 40) {
-          clearInterval(animationDraw)
-        }
-      }, 25)
+      
+      // let prevAngle = max_angle - (countTime - limitTime + 2) * average_angle;
+      let currAngle = max_angle-(countTime - limitTime + 1) * average_angle;
+    
+      this.drawRange(currAngle*pi, limitTime);
       limitTime = limitTime - 1;
+     
       this.setData({
         limitTime,
-        animationData: animation.export()
       })
       if (stopCount == true) {
-        this.drawRange(currAngle * pi, limitTime);
-        clearInterval(animationDraw);
+        // this.drawRange(currAngle, limitTime);
         clearInterval(countdown);
-        this.setData({
-          animationData: {}
-        })
       }
       if (limitTime < 1) {
         this.setData({
           limitTime: '超时',
-          animationData: {},
         })
         this.drawRange(-0.5 * pi, limitTime);
-        clearInterval(animationDraw);
         clearInterval(countdown);
         this.timeOver();
       }
